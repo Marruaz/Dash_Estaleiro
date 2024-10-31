@@ -3,100 +3,7 @@ import streamlit as st
 import warnings
 import matplotlib.pyplot as plt
 import uuid
-st.set_page_config(page_title="DashBoard do Estaleiro")
 
-# Estilos CSS para personalizar o app
-st.markdown("""
-    <style>
-    /* Definindo cores para o tema escuro */
-    body {
-        background-color: #251313 !important;
-        color: #E0E0E0;
-        font-family: Arial, sans-serif;
-    }
-
-    /* Estilizando o cabeçalho do app */
-    h2, h3, h4, h5, h6 {
-        color: #4314b0;
-    }
-    h1 {
-        color: #000000;
-        font-size: 38px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-bottom: 3px solid #cf244f;
-        padding-bottom: 10px;
-    }
-    h3 {
-        color: #000000;
-        font-size: 32px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-    }
-    h2 {
-        color: #000000;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-bottom: 3px solid #0072B8;
-        padding-bottom: 10px;
-    }
-
-    /* Estilizando os botões */
-    .stButton>button {
-        background-color: #0072B8;
-        color: #FFFFFF;
-        border: 2px solid #0072B8;
-        border-radius: 5px;
-        padding: 10px 10px;
-        width: 80%;
-        height: 80%;
-    }
-
-    /* Alterando o estilo dos botões quando o mouse passa por cima */
-    .stButton>button:hover {
-        background-color: #005F8D;
-        color: #FFFFFF;
-    }
-
-    .stButton[data-testid="stButton"][key="a"] > button {
-        background-color: red !important;
-    }
-
-    /* Estilizando os campos de texto */
-    .stTextInput>div>input {
-        background-color: #1E1E1E;
-        color: #E0E0E0;
-        border: 1px solid #0072B8;
-    }
-
-    /* Alterando o estilo dos gráficos */
-    @media (max-width: 768px) {
-        .streamlit-expanderHeader {
-            background-color: #0072B8;
-            color: #FFFFFF;
-        }
-    }
-
-    /* Sidebar */
-    .sidebar .sidebar-content {
-        height: 100vh;
-        background-color: #3ada12 !important;
-        color: #E0E0E0;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 # Ignorar avisos desnecessários
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -121,6 +28,15 @@ class DashboardProjetos:
             'PM': {'cod': [], 'quant': [], 'liberado': [], 'tipo': [], 'nome': []}
         }
         self.selecionar_dados_areas()
+
+    def carregar_css(self):
+        st.set_page_config(layout="wide")
+        
+        with open("style.css") as f:
+            css = f.read()
+
+    # Injetando o CSS na aplicação
+        st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
     def exibir_titulo(self):
         st.title("**DASHBOARD DOS PROJETOS**")
@@ -278,7 +194,7 @@ class DashboardProjetos:
     def exibir_dashboard(self):
         cont = 0
         cont_1 = 1000
-        #self.carregar_css()
+        self.carregar_css()
         self.exibir_titulo()
         self.carregar_imagem_sidebar()
 
@@ -317,7 +233,7 @@ class DashboardProjetos:
 
             # Botão para a categoria ACESSÓRIO
             with col1:
-                if st.button("ACESSÓRIO",key="a"):
+                if st.button("ACESSÓRIO",key="botao_vermelho"):
                     st.session_state.button_A = True
                     st.session_state.button_C = False
                     st.session_state.button_P = False
