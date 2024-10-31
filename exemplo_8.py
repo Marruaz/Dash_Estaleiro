@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 class DashboardProjetos:
     
     def __init__(self):
-        self.folder = "P:/00623/Documentos de projeto/05 - Elétrica/Project_DashBoard"
+        self.folder = "./"
         self.arq = "/Dados.xlsm"
         self.df = pd.read_excel(self.folder + self.arq, sheet_name="BASE DE DADOS")
         
