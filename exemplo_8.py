@@ -47,7 +47,7 @@ class DashboardProjetos:
     
     def carregar_imagem_sidebar(self):
         with st.sidebar:
-            st.image("P:/00623/Documentos de projeto/05 - Elétrica/Project_DashBoard/dash.png")
+            st.image("./dash.png")
 
     def selecionar_dados_areas(self):
         for i in range(self.df.shape[0]):
