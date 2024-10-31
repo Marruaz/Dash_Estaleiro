@@ -1,0 +1,87 @@
+/* Definindo cores para o tema escuro */
+body {
+    background-color: #251313 !important; /* Cor de fundo */
+    color: #E0E0E0; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte */
+}
+
+/* Estilizando o cabeçalho do app */
+h2, h3, h4, h5, h6 {
+    color: #4314b0; /* Cor dos títulos */
+}
+h1 {
+    color: #000000;  /* Cor do texto do header (azul do logo) */
+    font-size: 38px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o header */
+    margin-top: 20px; /* Margem superior */
+    margin-bottom: 20px; /* Margem inferior */
+    border-bottom: 3px solid #cf244f; /* Linha inferior para destacar o header */
+    padding-bottom: 10px; /* Espaçamento interno para a linha */
+}
+h3 {
+    color: #000000;  /* Cor do texto do header (azul do logo) */
+    font-size: 32px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o header */
+    margin-top: 20px; /* Margem superior */
+    margin-bottom: 20px; /* Margem inferior */
+    padding-bottom: 10px; /* Espaçamento interno para a linha */
+}
+h2 {
+    color: #000000;  /* Cor do texto do header (azul do logo) */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o header */
+    margin-top: 20px; /* Margem superior */
+    margin-bottom: 20px; /* Margem inferior */
+    border-bottom: 3px solid #0072B8; /* Linha inferior para destacar o header */
+    padding-bottom: 10px; /* Espaçamento interno para a linha */
+}
+
+/* Estilizando os botões */
+.stButton>button {
+    background-color: #0072B8; /* Azul do logo */
+    color: #FFFFFF; /* Cor do texto do botão */
+    border: 2px solid #0072B8; /* Borda do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 10px; /* Espaçamento interno do botão */
+    width: 80%; /* Definindo largura fixa */
+    height: 80%; /* Definindo altura fixa */
+}
+
+
+/* Alterando o estilo dos botões quando o mouse passa por cima */
+.stButton>button:hover {
+    background-color: #005F8D; /* Azul mais escuro ao passar o mouse */
+    color: #FFFFFF; /* Cor do texto ao passar o mouse */
+}
+
+.stButton[data-testid="stButton"][key="a"] > button {
+    background-color: red; /* Mais específico */
+}
+/* Estilizando os campos de texto */
+.stTextInput>div>input {
+    background-color: #1E1E1E; /* Fundo do campo de texto */
+    color: #E0E0E0; /* Cor do texto no campo de texto */
+    border: 1px solid #0072B8; /* Borda do campo de texto */
+}
+
+/* Alterando o estilo dos gráficos */
+@media (max-width: 768px) {
+    .streamlit-expanderHeader {
+        background-color: #0072B8; /* Fundo do cabeçalho do expander */
+        color: #FFFFFF; /* Cor do texto no cabeçalho do expander */
+    }
+}
+
+.sidebar .sidebar-content {
+    height: 100vh;  /* Altura da sidebar ajustada para preencher 100% da janela de visualização */
+    background-color: #3ada12 !important; /* Cor de fundo da sidebar */
+    color: #E0E0E0; /* Cor do texto da sidebar */
+    padding: 10px;  /* Espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo verticalmente */
+}
+/* Estilizando a tabela */
